@@ -1,0 +1,16 @@
+.buttonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.deleteMutationError, .updateMutationError {
+  color: tomato;
+}
+
+.deletingMutation .updatingMutation {
+  color: purple;
+}
+
+.deleteMutationSuccess, .updateMutationSuccess {
+  color: yellowgreen;
+}
