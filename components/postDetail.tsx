@@ -11,7 +11,9 @@ type PostDetailProps = {
 }
 
 const PostDetail = ({ post }: PostDetailProps) => {
-  const { data, isLoading } = useQuery(['comments', post.id], () => fetchComments(post.id))
+  const { data, isLoading } = useQuery(['comments', post.id], () =>
+    fetchComments(post.id)
+  )
 
   const updateMutation = useMutation(({ postId, data }: UpdatePostForm) =>
     updatePost({ postId, data })
@@ -39,16 +41,24 @@ const PostDetail = ({ post }: PostDetailProps) => {
         {deleteMutation.isError && (
           <p className={styles.deleteMutationError}>Delete Mutation Error</p>
         )}
-        {deleteMutation.isLoading && <p className={styles.deletingMutation}>Deleting Mutation</p>}
+        {deleteMutation.isLoading && (
+          <p className={styles.deletingMutation}>Deleting Mutation</p>
+        )}
         {deleteMutation.isSuccess && (
-          <p className={styles.deleteMutationSuccess}>Delete Mutation Success</p>
+          <p className={styles.deleteMutationSuccess}>
+            Delete Mutation Success
+          </p>
         )}
         {updateMutation.isError && (
           <p className={styles.updateMutationError}>Update Mutation Error</p>
         )}
-        {updateMutation.isLoading && <p className={styles.updatingMutation}>Updating Mutation</p>}
+        {updateMutation.isLoading && (
+          <p className={styles.updatingMutation}>Updating Mutation</p>
+        )}
         {updateMutation.isSuccess && (
-          <p className={styles.updateMutationSuccess}>Update Mutation Success</p>
+          <p className={styles.updateMutationSuccess}>
+            Update Mutation Success
+          </p>
         )}
       </div>
       <p>{post.body}</p>

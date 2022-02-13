@@ -43,7 +43,11 @@ const Home: NextPage = () => {
 
       <ul>
         {(data as Post[]).map((post) => (
-          <li key={post.id} className="post-title" onClick={() => setSelectedPost(post)}>
+          <li
+            key={post.id}
+            className="post-title"
+            onClick={() => setSelectedPost(post)}
+          >
             {post.title}
           </li>
         ))}
@@ -52,7 +56,9 @@ const Home: NextPage = () => {
         <button
           disabled={currentPage <= 1}
           className={styles.button}
-          onClick={() => setCurrentPage((prevCurrentPage) => prevCurrentPage - 1)}
+          onClick={() =>
+            setCurrentPage((prevCurrentPage) => prevCurrentPage - 1)
+          }
         >
           Previous
         </button>
@@ -60,7 +66,9 @@ const Home: NextPage = () => {
         <button
           disabled={currentPage >= MaxPostPage}
           className={styles.button}
-          onClick={() => setCurrentPage((prevCurrentPage) => prevCurrentPage + 1)}
+          onClick={() =>
+            setCurrentPage((prevCurrentPage) => prevCurrentPage + 1)
+          }
         >
           Next
         </button>
