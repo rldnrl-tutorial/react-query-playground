@@ -6,7 +6,14 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'next', 'next/core-web-vitals'],
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'next',
+    'next/core-web-vitals',
+    'plugin:@typescript-eslint/recommended',
+  ],
   rules: {
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
