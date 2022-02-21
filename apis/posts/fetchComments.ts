@@ -10,7 +10,9 @@ export type Comment = {
 }
 
 const fetchComments = async (postId: number) => {
-  const response = await axios.get<Comment[]>(`${BASE_URL}/comments?postId=${postId}`)
+  const response = await axios.get<Comment[]>(
+    `${BASE_URL}/comments?postId=${postId}`
+  )
 
   return response.data
 }

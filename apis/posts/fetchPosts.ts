@@ -9,7 +9,9 @@ export type Post = {
 }
 
 const fetchPosts = async (pageNumber: number) => {
-  const response = await axios.get<Post[]>(`${BASE_URL}/posts/?_limit=10&_page=${pageNumber}`)
+  const response = await axios.get<Post[]>(
+    `${BASE_URL}/posts/?_limit=10&_page=${pageNumber}`
+  )
 
   return response.data
 }
